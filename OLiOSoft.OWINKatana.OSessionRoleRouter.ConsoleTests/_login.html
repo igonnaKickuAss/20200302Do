@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>登陆</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <script src="/jquery-3.4.1.min.js"></script>
+    <script>
+        window.onload = function () {
+            $('input[name="sub"]').click(function () {
+                let $this = $(this);
+                $this.attr('disabled', true);
+                let name = $('#an').val();
+                let url = "/login";
+                $.ajax({
+                    type: "POST",
+                    async: true,
+                    url: url,
+                    contentType: "application/json",
+                    data: { 'data': JSON.stringify({ Name: name }) },
+                    success: (outData) =>
+                    {
+                        $this.attr('disabled', false);
+                        window.location.replace(outData.url);
+                    },
+                    error: () => { $this.attr('disabled', false);}
+                });
+                return false;
+            });
+        };
+    </script>
+</head>
+<body>
+    <h1>you have not login yet.. this is the login page...</h1>
+    <label for="an">账户名称</label>
+    <input type="text" name="accountName" autocomplete="off" value="" id="an" />
+    <input type="submit" name="sub" value="登陆" />
+</body>
+</html>

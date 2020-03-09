@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C154D7C2-7F4C-485C-84B3-8C7A6622A14F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OLiOSoft.OWINKatana.OSessionRoleRouter</RootNamespace>
+    <AssemblyName>OLiOSoft.OWINKatana.OSessionRoleRouter</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\References\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\References\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Internals\Constants.cs" />
+    <Compile Include="Internals\InMemoryMethods.cs" />
+    <Compile Include="Internals\InMemoryStoragebox.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publics\Extensions\ORouterMiddlewareAppBuilderExtensions.cs" />
+    <Compile Include="Publics\Extensions\ORoleMiddlewareAppBuilderExtensions.cs" />
+    <Compile Include="Publics\Extensions\ORouterMiddlewareOwinContextExtensions.cs" />
+    <Compile Include="Publics\Extensions\OSessionMiddlewareAppBuilderExtensions.cs" />
+    <Compile Include="Publics\Extensions\ORoleMiddlewareOwinContextExtensions.cs" />
+    <Compile Include="Publics\Extensions\OSessionMiddlewareOwinContextExtensions.cs" />
+    <Compile Include="Publics\Extensions\OTransitServerAppBuilderExtensions.cs" />
+    <Compile Include="Publics\OAPIMethods.cs" />
+    <Compile Include="Publics\ORoleAttribute.cs" />
+    <Compile Include="Publics\ORoleContext.cs" />
+    <Compile Include="Publics\ORoleMiddleware.cs" />
+    <Compile Include="Publics\ORoleMiddlewareDefaults.cs" />
+    <Compile Include="Publics\ORoleMiddlewareOptions.cs" />
+    <Compile Include="Publics\ORoleStore.cs" />
+    <Compile Include="Publics\ORouterAttribute.cs" />
+    <Compile Include="Publics\ORouterContext.cs" />
+    <Compile Include="Publics\ORouterMiddleware.cs" />
+    <Compile Include="Publics\ORouterMiddlewareDefaults.cs" />
+    <Compile Include="Publics\ORouterMiddlewareOptions.cs" />
+    <Compile Include="Publics\ORouterStore.cs" />
+    <Compile Include="Publics\OSessionContext.cs" />
+    <Compile Include="Publics\OSessionMiddleware.cs" />
+    <Compile Include="Publics\OSessionMiddlewareDefaults.cs" />
+    <Compile Include="Publics\OSessionMiddlewareOptions.cs" />
+    <Compile Include="Publics\OSessionStore.cs" />
+    <Compile Include="Publics\OTransitServerOptions.cs" />
+    <Compile Include="Publics\Shares\SharedOptionsBase.cs" />
+    <Compile Include="Publics\Shares\SharedOptions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OLiOSoft.OWINKatana.OSessionRoleRouter.AnyOfMiscs\OSessionRoleRouter.AnyOfMiscs.csproj">
+      <Project>{962cd873-0801-4c45-a232-01c62139d6b4}</Project>
+      <Name>OSessionRoleRouter.AnyOfMiscs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OLiOSoft.OWINKatana.OSessionRoleRouter.Interfaces\OSessionRoleRouter.Interfaces.csproj">
+      <Project>{df1fb1ac-203c-47f9-bc54-0fbcbf84e067}</Project>
+      <Name>OSessionRoleRouter.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
