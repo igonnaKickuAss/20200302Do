@@ -50,6 +50,9 @@ namespace OLiOSoft.OWINKatana.OSessionRoleRouter
         #endregion
 
         #region -- Interfaces APIMethods --
+        /// <summary>
+        /// 管道上下文
+        /// </summary>
         public IOwinContext HttpContext
         {
             get => m_HttpContext;

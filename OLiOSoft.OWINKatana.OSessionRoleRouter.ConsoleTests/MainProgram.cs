@@ -175,7 +175,6 @@ namespace OLiOSoft.OWINKatana.OSessionRoleRouter.ConsoleTests
             appBuilder.UseFileServer(fs4);
             appBuilder.UseFileServer(fs5);
             appBuilder.UseTransitServer(options);
-
             appBuilder.UseFileServer(fs6);
             appBuilder.UseFileServer(fs7);
         }
